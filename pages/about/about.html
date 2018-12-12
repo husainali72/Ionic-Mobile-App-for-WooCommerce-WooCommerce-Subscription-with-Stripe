@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle start color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logo.png" class="heading-logo" />
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button clear (click)="message()">
+          <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="primary" text-center>
+    <ion-title>
+      <h6 class="subheader">About Us</h6>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="assets/imgs/banner-about.png" width="100%" />
+  <img src="assets/imgs/design4.png" class="svg" />
+  <ion-list>
+    <ion-item no-lines>
+      <h4>
+        <strong>ABOUT US</strong>
+      </h4>
+    </ion-item>
+    <ion-card text-center class="about-card">
+      <ion-card-content padding>
+        <ion-icon name="ios-heart-outline" color="white"></ion-icon>
+        <br>
+        <strong>We Care</strong>
+      </ion-card-content>
+    </ion-card>
+    <ion-card text-center class="about-card">
+      <ion-card-content padding>
+        <ion-icon name="ios-leaf-outline" color="white"></ion-icon>
+        <br>
+        <strong> Green Friendly</strong>
+      </ion-card-content>
+    </ion-card>
+    <ion-card text-center class="about-card">
+      <ion-card-content padding>
+        <ion-icon name="ios-cog" color="white"></ion-icon>
+        <br>
+        <strong> We Make It Easy</strong>
+      </ion-card-content>
+    </ion-card>
+    <ion-card text-center class="about-card">
+      <ion-card-content padding>
+        <ion-icon name="ios-checkmark-circle-outline" color="white"></ion-icon>
+        <br>
+        <strong> The Best Care</strong>
+      </ion-card-content>
+    </ion-card>
+    <ion-item text-wrap no-lines>
+      <h4>About Us Heading</h4>
+      <h4>Sub Heading</h4>
+      <p class="para-about" padding-top>
+        <strong>At HB Websol, our goal is simple</strong>: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        .</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,221 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle start color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logo.png" class="heading-logo" />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="message()">
+        <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" text-center>
+    <ion-title>
+      <h6 class="subheader">Checkout
+        <span float-right>{{(product.billingAmount) | currency:'$' }}</span>
+      </h6>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form class="form" (ngSubmit)="onSubmit(validations_form.value)" [formGroup]="validations_form">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked color="primary">First Name</ion-label>
+        <ion-input type="text" formControlName="firstName" (keyup)="reflectChanges()"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.firstname">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('firstName').hasError(validation.type) && (validations_form.get('firstName').dirty || validations_form.get('firstName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label stacked color="primary">Last Name</ion-label>
+        <ion-input type="text" formControlName="lastName" (keyup)="reflectChanges()"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.lastname">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('lastName').hasError(validation.type) && (validations_form.get('lastName').dirty || validations_form.get('lastName').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div formGroupName="country_phone">
+        <ion-item>
+          <ion-label stacked color="primary">Street Address</ion-label>
+          <ion-input type="text" formControlName="addressLine1" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.addressLine1">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('addressLine1').hasError(validation.type) && (validations_form.get('country_phone').get('addressLine1').dirty || validations_form.get('country_phone').get('addressLine1').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <ion-item>
+          <ion-label stacked color="primary">Country</ion-label>
+          <ion-input type="text" formControlName="country"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.country">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('country').hasError(validation.type) && (validations_form.get('country_phone').get('country').dirty || validations_form.get('country_phone').get('country').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-item>
+          <ion-label stacked color="primary">State</ion-label>
+          <ion-select formControlName="state" (click)="reflectChanges()">
+            <ion-option value="{{state.id}}" *ngFor="let state of stateList">{{ state.name }}</ion-option>
+          </ion-select>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.state">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('state').hasError(validation.type) && (validations_form.get('country_phone').get('state').dirty || validations_form.get('country_phone').get('state').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <ion-item>
+          <ion-label stacked color="primary">Town / City</ion-label>
+          <ion-input type="text" formControlName="city" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.city">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('city').hasError(validation.type) && (validations_form.get('country_phone').get('city').dirty || validations_form.get('country_phone').get('city').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <ion-item>
+          <ion-label stacked color="primary">ZIP</ion-label>
+          <ion-input type="text" formControlName="zipCode" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.zipCode">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('zipCode').hasError(validation.type) && (validations_form.get('country_phone').get('zipCode').dirty || validations_form.get('country_phone').get('zipCode').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <ion-item>
+          <ion-label stacked color="primary">Phone</ion-label>
+          <ion-input type="text" formControlName="phone" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.phone">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('country_phone').get('phone').hasError(validation.type) && (validations_form.get('country_phone').get('phone').dirty || validations_form.get('country_phone').get('phone').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked color="primary">Email Address</ion-label>
+        <ion-input type="email" formControlName="email" (keyup)="reflectChanges()"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label stacked color="primary">DOB</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY" formControlName="dob" (click)="reflectChanges()"></ion-datetime>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.dob">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('dob').hasError(validation.type) && (validations_form.get('dob').dirty || validations_form.get('dob').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label stacked color="primary">Gender</ion-label>
+        <ion-select formControlName="gender" (click)="reflectChanges()">
+          <ion-option value="Male">Male</ion-option>
+          <ion-option value="Female">Female</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.gender">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('gender').hasError(validation.type) && (validations_form.get('gender').dirty || validations_form.get('gender').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label stacked color="primary">Language</ion-label>
+        <ion-select formControlName="language" (click)="reflectChanges()">
+          <ion-option value="Spanish">Spanish</ion-option>
+          <ion-option value="English">English</ion-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.language">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('language').hasError(validation.type) && (validations_form.get('language').dirty || validations_form.get('language').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div formGroupName="matching_passwords">
+        <ion-item>
+          <ion-label stacked color="primary">Password</ion-label>
+          <ion-input type="password" formControlName="password" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('matching_passwords').get('password').hasError(validation.type) && (validations_form.get('matching_passwords').get('password').dirty || validations_form.get('matching_passwords').get('password').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <ion-item>
+          <ion-label stacked color="primary">Confirm Password</ion-label>
+          <ion-input type="password" formControlName="cpassword" (keyup)="reflectChanges()"></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.cpassword">
+            <div padding-left padding-right class="error-message" *ngIf="validations_form.get('matching_passwords').get('cpassword').hasError(validation.type) && (validations_form.get('matching_passwords').get('cpassword').dirty || validations_form.get('matching_passwords').get('cpassword').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+          <div padding-left padding-right class="error-message" *ngIf="validations_form.get('matching_passwords').hasError(validation.type) && (validations_form.get('matching_passwords').get('cpassword').dirty || validations_form.get('matching_passwords').get('cpassword').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </ion-list>
+    <ion-row text-center>
+      <ion-col>
+        <button ion-button type="submit" color="primary">Process</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

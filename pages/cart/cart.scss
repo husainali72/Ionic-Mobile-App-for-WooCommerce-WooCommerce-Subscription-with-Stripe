@@ -1,0 +1,30 @@
+page-cart {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    .cart-bg{
+        background-color:map-get($colors, secprimary);
+    }
+    .cart-card{
+        background-color:map-get($colors, primary);
+        ion-card-content{
+            background-color:map-get($colors, white);
+        }
+    }
+    
+    .cart-haeader{
+        background-color:map-get($colors, light);
+    }
+    p{
+        color:map-get($colors, secprimary) !important;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .remove-icon{
+        font-size: 30px; 
+        float:right;
+    }
+    .removeCode{
+        font-size:10px !important; 
+        cursor: pointer !important;
+    }
+}

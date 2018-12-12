@@ -1,0 +1,39 @@
+page-welcome {
+  .welcombg {
+    background-image: url(../assets/imgs/main.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .img-welcome {
+    width: 200px;
+    margin-top: 220px;
+  }
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  .note-welcome {
+    color: #fff;
+    line-height: 26px;
+    font-size: 15px;
+    padding: 0 18px;
+    text-align: justify;
+  }
+  .img-seclogo {
+    width: 100% !important;
+  }
+  @media screen and (max-width: 325px) {
+    .img-welcome {
+      width: 180px;
+      margin-top: 115px;
+    }
+    .note-welcome {
+      line-height: 20px;
+      font-size: 12px;
+      padding: 0 15px;
+      text-align: justify;
+    }
+  }
+}

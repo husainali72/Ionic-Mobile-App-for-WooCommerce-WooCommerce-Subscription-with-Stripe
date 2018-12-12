@@ -1,0 +1,69 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <ion-item text-center no-lines>
+                <img src="assets/imgs/logo.png" width="50%" />
+            </ion-item>
+        </ion-list>
+
+
+        <!--ion-card text-center menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-card-content padding> 
+            {{p.title}}
+        </ion-card-content>
+    </ion-card-->
+
+        <ion-card text-center menuClose (click)="openHomePage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-home-outline"></ion-icon>
+                <br> Home
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card text-center menuClose (click)="openRegisterPage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-clipboard-outline"></ion-icon>
+                <br> Plans
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card text-center menuClose (click)="openMessagePage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-mail-outline"></ion-icon>
+                <br> e-Notices
+            </ion-card-content>
+        </ion-card>
+        <ion-card text-center menuClose (click)="openAboutPage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-paper-outline"></ion-icon>
+                <br> About Us
+            </ion-card-content>
+        </ion-card>
+        <ion-card text-center menuClose (click)="openContactPage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-call-outline"></ion-icon>
+                <br> Contact Us
+            </ion-card-content>
+        </ion-card>
+        <ion-card text-center menuClose (click)="openPortalPage()" class="menu-card">
+            <ion-card-content padding>
+                <ion-icon name="ios-aperture-outline"></ion-icon>
+                <br> Health Portal
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
+
+</ion-menu>
+
+<div *ngIf="showSplash" class="splash">
+    <div class="spinner"></div>
+</div>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

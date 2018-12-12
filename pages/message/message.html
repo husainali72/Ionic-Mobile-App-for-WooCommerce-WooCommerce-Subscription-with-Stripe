@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="white">
+        <button ion-button menuToggle start color="primary">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <img src="assets/imgs/logo.png" class="heading-logo" />
+        </ion-title>
+
+        <ion-buttons end>
+            <button ion-button clear (click)="message()">
+                <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+            </button>
+        </ion-buttons>
+
+
+    </ion-navbar>
+    <ion-toolbar color="primary" text-center>
+        <ion-title>
+            <h6 class="subheader">e-Notices</h6>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card text-center class="msg-card" *ngFor="let post of postList">
+        <ion-card-header color="white" class="msg-card-header">
+            {{ post.title }}
+        </ion-card-header>
+        <ion-card-content padding>
+            <p>{{ post.content }}</p>
+        </ion-card-content>
+    </ion-card>
+    <ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-content class="welcombg" text-center>
+  <img src="assets/imgs/logolight.png" class="img-welcome" />
+
+
+
+  <div padding>
+    <button ion-button block color="light" outline (click)="homeStudentPage()">Enter Here</button>
+    <button ion-button block color="light" margin-top outline (click)="homePortalPage()">Member Login</button>
+
+    <ion-fab left top>
+      <button ion-fab color="primary">
+        <ion-icon name="share"></ion-icon>
+      </button>
+      <ion-fab-list side="bottom">
+        <button ion-fab (click)="shareFacebook()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+        <button ion-fab (click)="shareTwitter()">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </button>
+        <button ion-fab (click)="shareMail()">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+        <button ion-fab (click)="shareWhatsapp()">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <img src="assets/imgs/design2.png" class="img-seclogo" />
+
+  <p class="note-welcome">Non Members can purchase a monthly subscription directly through the app. Current Members will
+    log into their Member Portal through the Member Login tab</p>
+
+</ion-content>

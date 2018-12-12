@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle start color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logo.png" class="heading-logo" />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="message()">
+        <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" text-center>
+    <ion-title>
+      <h6 class="subheader">Cart</h6>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="cart-bg">
+  <ion-card class="cart-card">
+    <ion-card-header color="white">
+      <!-- <ion-icon name="close" class="remove-icon" color="white"></ion-icon> -->
+      {{ product.name }}
+    </ion-card-header>
+    <ion-card-content padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>Product</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>{{ product.name }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>Quantity</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>1</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>Price</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>{{product.regular_price | currency:'$'}} for 1 {{ product.intervalType }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>Signup fee</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>{{ product.signUpFee | currency:'$' }}</p>
+          </ion-col>
+        </ion-row>
+        <hr>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>Total</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>
+              <strong>{{product.total_fee | currency:'$'}}</strong>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <hr>
+  <ion-card class="cart-card">
+    <ion-card-header color="white">
+      Do You Have Coupon Code?
+    </ion-card-header>
+    <ion-card-content padding>
+      <ion-row>
+        <ion-col>
+          <ion-input type="text" [(ngModel)]="couponCode" placeholder="Enter Code" class="coupon-input"></ion-input>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline float-right (click)="verifyCouponCode()">Apply</button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <hr>
+  <ion-card class="cart-card">
+    <ion-card-header color="primary" class="cart-haeader">
+      CART TOTALS
+    </ion-card-header>
+    <ion-card-content padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>SUBTOTAL</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>{{product.total_fee | currency:'$'}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="appliedCode">
+          <ion-col>
+            <p>
+              Coupon Code:
+              <i>{{ appliedCode | uppercase }}</i>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p float-left padding-bottom>-{{ discountAmount | currency:'$' }}</p>
+            <ion-badge color="danger" margin-left>
+              <span (click)="removeCode()">
+                <ion-icon name="close" class="removeCode"></ion-icon>
+              </span>
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              <strong>TOTAL</strong>
+            </p>
+          </ion-col>
+          <ion-col>
+            <p>{{(product.total_fee - discountAmount) | currency:'$' }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row text-center>
+          <ion-col>
+            <button ion-button color="secondary" (click)="checkout(product)">Proceed to Checkout</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle start color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logo.png" class="heading-logo" />
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button clear (click)="message()">
+        <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+  <ion-toolbar color="primary" text-center>
+    <ion-title>
+      <h6 class="subheader">Contact</h6>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <img src="assets/imgs/banner-contact.png" width="100%" />
+
+  <img src="assets/imgs/design4.png" class="svg" />
+
+  <ion-list>
+
+    <ion-card text-left class="contact-card">
+      <ion-card-header color="white">
+        <ion-icon name="ios-call-outline" color="white"></ion-icon>Contact
+      </ion-card-header>
+
+      <ion-card-content padding>
+        <span>
+          Member Services Department
+          <br>
+          <a href="tel:+XXXXXXXXXXX">
+            <strong>XXX-(XXX-XXXX)</strong>
+          </a>
+        </span>
+        <hr>
+        <span>
+          institution, billing, sales, or other questions
+          <br>
+          <a class="contact-tel" href="tel:+XXXXXXXXXXX">
+            <strong>XXX-(XXX-XXXX)</strong>
+          </a>
+          <br />
+        </span>
+        <hr>
+        <span>
+          Send us an email
+          <br>
+          <a class="contact-tel" href="mailto:info@hbwebsol.com">
+            <ion-icon class="contact-Mail" name="mail"></ion-icon> info@hbwebsol.com
+          </a>
+        </span>
+
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+</ion-content>

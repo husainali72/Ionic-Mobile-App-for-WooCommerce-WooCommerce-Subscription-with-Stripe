@@ -1,0 +1,15 @@
+page-message {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    .msg-card{
+        background-color:map-get($colors, primary);
+    }
+    .msg-card-header{
+        background-color:map-get($colors, secprimary);
+    }
+    p{
+        color:#eee !important;
+    }
+}
+ 

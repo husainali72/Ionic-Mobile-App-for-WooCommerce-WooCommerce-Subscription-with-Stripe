@@ -1,0 +1,29 @@
+page-about {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    .para-about{
+        line-height:25px;
+        // color:grey;
+        color:rgb(40,40,40);
+        text-align: justify;
+        font-size:16px;
+    }
+    .svg{
+        margin-top: -70px;
+        z-index:99;
+    } 
+    h4{
+        color:map-get($colors ,primary );
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px !important;
+    }
+    .about-card{
+        width:42.5%;
+        display:inline-block;
+        background-color:map-get($colors , primary );
+        strong{
+            color:#fff;
+        }
+    }
+}

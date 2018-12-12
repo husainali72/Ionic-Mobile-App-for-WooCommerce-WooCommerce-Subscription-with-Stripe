@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle start color="primary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/imgs/logo.png" class="heading-logo" />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="message()">
+        <ion-icon name="ios-mail-outline" color="primary" class="icon-msg"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" text-center>
+    <ion-title>
+      <h6 class="subheader">Register</h6>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="bg-main">
+  <ion-list padding-top class="list-register">
+    <ion-item no-lines text-center text-wrap class="item-register">
+      <h1>IT'S SUPER COST-EFFECTIVE</h1>
+    </ion-item>
+    <ion-item no-lines text-center text-wrap class="item-register">
+      <p class="register-p">Your monthly membership covers up to 7 family members, never a consultation fee - It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-card text-center class="card-register" *ngFor="let product of products">
+    <ion-card-header color="white">
+      {{ product.name }}
+    </ion-card-header>
+    <ion-card-content padding>
+      <p class="card-p">
+        <span>${{ product.regular_price }}</span> / {{ product.intervalType | titlecase }}</p>
+      <button ion-button text-center small outline color="secprimary" (click)="cart(product)">Subscribe Now</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item class="plan-ul no-padding" no-lines></ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 1</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 2</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 3</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 4</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 5</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 6</ion-item>
+    <ion-item class="plan-ul" text-wrap >List Item 7</ion-item>
+    <ion-item class="plan-ul no-padding" no-lines></ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,14 @@
+page-thankyou {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    h1{
+        color:map-get($colors ,primary )
+    }
+    .dangerText{
+        color:map-get($colors , danger);
+    }
+    .normalText{
+        color:map-get($colors , primary);
+    }
+}

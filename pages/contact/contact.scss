@@ -1,0 +1,50 @@
+page-contact {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    .svg{
+        margin-top: -70px;
+        z-index:99;
+    } 
+    h5{
+        color:map-get($colors ,primary );
+        font-family: 'Montserrat', sans-serif;
+    }
+    label{
+        color:map-get($colors,primary);
+    }
+    ion-input{
+        border-color: map-get($colors,primary) !important;
+    } 
+    .contact-card{
+        background-color:map-get($colors,primary);
+        hr{
+            background: #bbb;
+        } 
+        a, span {
+            color:map-get($colors,light);
+            font-size:14px;
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            strong{
+                font-size:16px;
+            }
+        }
+        .contact-tel:hover{
+            opacity: 1 !important;
+        }
+        ion-icon{
+            font-size:25px !important;
+            margin-right:20px;
+        }
+        ion-card-header{
+            background-color:map-get($colors,secprimary); 
+            font-family: 'Montserrat', sans-serif;
+        }
+        .contact-Mail{
+            font-size: 20px !important;
+            margin-right: 2px;
+            padding-top: 8px;
+        }
+    }  
+}

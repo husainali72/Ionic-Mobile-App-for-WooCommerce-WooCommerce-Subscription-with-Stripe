@@ -1,0 +1,46 @@
+page-register {
+    body{
+        font-family: 'Montserrat', sans-serif !important;
+      }
+    .bg-main{
+        background-color:map-get($colors, secprimary); 
+    }
+    h1{
+        color:map-get($colors,white);
+        font-family: 'Montserrat', sans-serif;
+        font-size:2rem !important;
+        font-weight:800;
+    }
+    .list-register .item-register{
+        background-color: map-get($colors, secprimary);
+    }
+    .card-register{
+        background-color:map-get($colors, primary);
+        ion-card-content{
+            background-color:map-get($colors, white);
+        }
+    }
+    .card-p{
+        color:map-get($colors, secprimary) !important;
+        font-family: 'Montserrat', sans-serif;
+        span{
+            font-size:3em;
+        }
+    }
+    .register-p{
+        color:#eee;
+        text-align: justify;
+        line-height:20px;
+    }
+    .plan-ul{
+        background:transparent !important;
+        color:#fff;
+        font-size:14px;
+    }
+    .no-padding{
+        padding:0px !important;
+        min-height: 0px !important;
+        height: 0px !important;
+    }
+
+}
