@@ -1,0 +1,7 @@
+{
+  "name": "campusrx",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
